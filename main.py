@@ -1,5 +1,6 @@
 import datetime
-
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for, flash, abort
 # from flask_bootstrap import Bootstrap
 # from flask_ckeditor import CKEditor
@@ -12,6 +13,8 @@ from flask import Flask, render_template, redirect, url_for, flash, abort
 # from forms import LoginForm, RegisterForm, CreatePostForm, CommentForm
 # from flask_gravatar import Gravatar
 
+load_dotenv()
+password = os.getenv("password")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8knqjkwhfwqkjhfwqoikjckqhfopiuqwihfnqwjkln;vljqwhvqu;lifjqw;kuehwq;lufjqwjlkvwq'
 current_year = datetime.datetime.now().year
